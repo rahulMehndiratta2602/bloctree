@@ -1,0 +1,29 @@
+import Image from "next/image";
+
+export const NFTCard = ({ nft }) => {
+    console.log("NFT Image URL:", nft.media[0].gateway); // Debug log
+  return (
+    <div className="w-1/4 flex flex-col ">
+      <div className="rounded-md">
+        <Image
+          className="object-cover h-128 w-full rounded-t-md"
+          src={nft.media[0].gateway}
+          alt={nft.title || "NFT Image"}
+          width={500} 
+          height={500}
+        />
+      </div>
+      <div className="flex flex-col y-gap-2 px-2 py-3 bg-slate-100 rounded-b-md h-110 ">
+        <div className="">
+          <h2 className="text-xl text-gray-800">{nft.title}</h2>
+          <p className="text-gray-600">Id: {nft.id.tokenId}</p>
+          <p className="text-gray-600">{nft.contract.address}</p>
+        </div>
+
+        <div className="flex-grow mt-2">
+          <p className="text-gray-600">{nft.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
