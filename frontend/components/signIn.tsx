@@ -4,54 +4,59 @@ import passKeyImage from '@/public/img/passkey.webp';
 import { SignInCarousel } from './signInCarousel';
 export const SignIn = () => {
     return (
-        <div className="flex">
-            <main className="w-[50%] bg-background flex flex-col px-12 py-[8.0rem] gap-10">
-                <h1 className="text-xl font-bold">Select Sign In Option</h1>
-                <section className="flex flex-col gap-8">
-                    <div className="flex items-center gap-4">
+        <div className="flex md:flex-row flex-col-reverse  ">
+            <main className=" w-full h-[50vh] md:h-screen md:w-[50vw]  bg-page-gradient bg-background grid grid-cols-1 xs:grid-cols-2 sm:gap-6 md:flex md:flex-col px-6 sm:px-4 md:px-10 py-[2rem] md:py-[4rem] lg:py-[8.0rem] gap-2 md:gap-10 z-20">
+                <h1 className="text-[1.8rem] sm:text-lg md:text-xl font-bold ">
+                    Select Sign In Option
+                </h1>
+                <section className="flex flex-col  md:gap-6">
+                    <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
                             src={walletsImage}
                             alt="wallets Image"
-                            width={45}
-                            className="cursor-pointer"
+                            className="cursor-pointer w-8 md:w-12"
                         />
-                        <h2 className="text-nm font-bold cursor-pointer">Connect Wallet</h2>
+                        <h2 className="text-sm md:text-nm font-bold cursor-pointer">
+                            Connect Wallet
+                        </h2>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
                             src={passKeyImage}
                             alt="wallets Image"
-                            width={45}
-                            className="cursor-pointer"
+                            className="cursor-pointer w-8 md:w-12"
                         />
-                        <h2 className="text-nm font-bold cursor-pointer">Login with Passkey</h2>
+                        <h2 className="text-sm md:text-nm font-bold cursor-pointer">
+                            Login with Passkey
+                        </h2>
                     </div>
                 </section>
-                <h3 className="text-md text-grey">New here?</h3>
-                <section className="flex flex-col gap-8">
-                    <div className="flex items-center gap-4">
+                <h3 className="text-xs md:text-md text-grey">New here?</h3>
+                <section className="flex flex-col  md:gap-6">
+                    <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
                             src={walletsImage}
                             alt="wallets Image"
-                            width={45}
-                            className="cursor-pointer"
+                            className="cursor-pointer w-8 md:w-12"
                         />
-                        <h2 className="text-nm font-bold cursor-pointer">
+                        <h2 className="text-sm md:text-nm font-bold cursor-pointer">
                             Register with a New Wallet
                         </h2>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
                             src={passKeyImage}
                             alt="wallets Image"
-                            width={45}
-                            className="cursor-pointer"
+                            className="cursor-pointer w-8 md:w-12"
                         />
-                        <h2 className="text-nm font-bold cursor-pointer">Create new passkey</h2>
+                        <h2 className="text-sm md:text-nm font-bold cursor-pointer">
+                            Create new passkey
+                        </h2>
                     </div>
                 </section>
             </main>
-            <div className="w-[50%] bg-grey ">
+            <div className="w-full h-[50vh] md:h-screen md:w-[50vw]  bg-secondary-gradient-background-vertical md:bg-secondary-gradient-background ">
+                {/* "1,2,3,5,7,21,28,30" */}
                 <SignInCarousel />
             </div>
         </div>

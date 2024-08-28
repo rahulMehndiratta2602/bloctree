@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+    mode: 'jit', // Ensure JIT mode is enabled
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,12 +11,7 @@ const config: Config = {
         fontFamily: {
             sans: '"SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
         },
-        colors: {
-            background: '#000212',
-            white: '#fff',
-            grey: '#858699',
-            'white-a08': 'rgba(255,255,255,0.08)',
-        },
+
         fontSize: {
             xs: '1.3rem',
             sm: '1.4rem',
@@ -40,14 +36,30 @@ const config: Config = {
             11: '4.4rem',
             12: '4.8rem',
         },
-        backgroundImage: {
-            'primary-gradient':
-                'linear-gradient(92.88deg, #455eb5 9.16%, #5643cc 43.89%, #673fd7 64.72%);',
-            'page-gradient':
-                'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, .3), transparent);',
-        },
+
         boxShadow: {
             primary: 'rgb(80 63 205 / 50%) 0px 1px 40px',
+        },
+        extend: {
+            screens: {
+                xs: '576px',
+                // => @media (min-width: 992px) { ... }
+            },
+            backgroundImage: {
+                'primary-gradient':
+                    'linear-gradient(92.88deg, #455eb5 9.16%, #5643cc 43.89%, #673fd7 64.72%);',
+                'page-gradient':
+                    'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, .3), transparent);',
+                'secondary-gradient-background': 'linear-gradient(125deg, #5f9ea0, #4682b4);',
+                'secondary-gradient-background-vertical':
+                    'linear-gradient(0deg, #5f9ea0, #4682b4);',
+            },
+            colors: {
+                background: '#000212',
+                white: '#fff',
+                grey: '#858699',
+                'white-a08': 'rgba(255,255,255,0.08)',
+            },
         },
     },
 

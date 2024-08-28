@@ -3,13 +3,38 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   :root {
     --navigation-height: 4.8rem;
+    --transition: all 0.3s linear;
   }
 
   html {
     @apply bg-background font-sans text-white;
     font-size: 62.5%;
+  }
+
+  article {
+    transition: var(--transition);
+    z-index: 1
+  }
+
+  article.activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  article.lastSlide {
+    transform: translateX(-100%);
+
+  }
+
+  article.nextSlide {
+    transform: translateX(100%);
   }
 }
 
