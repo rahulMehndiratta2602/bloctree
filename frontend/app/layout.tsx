@@ -18,17 +18,7 @@ export default function RootLayout({
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </head>
-            <body>
-                <div>
-                    <Header />
-                    <main className="pt-[var(--navigation-height)] bg-page-gradient">
-                        {children}
-                    </main>
-                    <footer className='h-[100vh]'>
-                        <Container>Footer Component</Container>
-                    </footer>
-                </div>
-            </body>
+            <body>{children}</body>
         </html>
     );
 }

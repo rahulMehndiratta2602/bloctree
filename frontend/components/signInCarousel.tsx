@@ -11,7 +11,7 @@ export const SignInCarousel = () => {
     useEffect(() => {
         let slider = setInterval(() => {
             setCardIndex((cardIndex + 1) % count);
-        }, 80000);
+        }, 4000);
         return () => clearInterval(slider);
     }, [cardIndex, count]);
     return (
