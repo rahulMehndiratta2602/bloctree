@@ -15,6 +15,7 @@
   :root {
     --navigation-height: 4.8rem;
     --transition: all 0.3s linear;
+    --angle: 90deg;
   }
 
   html {
@@ -40,10 +41,89 @@
   article.nextSlide {
     transform: translateX(100%);
   }
+
+  .mask-radial-faded {
+    mask-image: radial-gradient(circle at center center, black, transparent 80%)
+  }
+
+
+  .mask-linear-faded {
+    mask-image: linear-gradient(black, transparent 70%)
+  }
+
+  .mask-keyboard {
+    mask-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.57) 33.98%, black 100%);
+  }
+
+  .mask-shortcutkeys {
+    mask-image: linear-gradient(to right, transparent, black 40%, black calc(60%), transparent 100%);
+  }
 }
 
 .wireframe-web3 {
   -webkit-text-stroke: 1px white;
+}
+
+.gradient-border {
+  --border-width: 2px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 300px; */
+  /* height: 200px; */
+  font-family: Lato, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  background: #222;
+  border-radius: 10px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      #455eb5,
+      #5643cc,
+      #673fd7,
+      #5f9ea0,
+      #4682b4,
+      #4682b4
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 10px;
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+.gradient-border2{
+  border: 0.35rem solid;
+  border-image: conic-gradient(from var(--angle), #18181b, #5643cc 0.1turn, #5f9ea0 0.15turn, #18181b 0.25turn) 30;
+	animation: borderRotate 2500ms linear infinite forwards;
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @layer utilities {

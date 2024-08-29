@@ -1,7 +1,11 @@
+import classNames from "classnames";
 import type { Metadata } from 'next';
 import './globals.css';
 import { Container } from '@/components/container';
 import { Header } from '@/components/header';
+import { MovingBorderComponent } from '@/components/movingBorder';
+import { StarsIllustration } from '@/components/stars';
+import { UnlikeAnyTool } from "@/components/unlineAnyTool";
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -24,8 +28,19 @@ export default function RootLayout({
                     <main className="pt-[var(--navigation-height)] bg-page-gradient">
                         {children}
                     </main>
-                    <footer className='h-[100vh]'>
-                        <Container>Footer Component</Container>
+                    <Container>
+                    <div
+                        className={classNames(
+                        "mask-radial-faded pointer-events-none relative z-[-1] my-[-12.8rem] overflow-hidden",
+                        "[--color:#7877C6] before:absolute before:inset-0 before:bg-radial-faded before:opacity-[0.4]",
+                        "after:absolute after:top-1/2 after:-left-1/2 after:h-[142.8%] after:w-[200%] after:rounded-[50%] after:border-t after:border-[rgba(120,_119,_198,_0.4)] after:bg-background"
+                        )}
+                    >
+                        <StarsIllustration />
+                    </div>
+                    <UnlikeAnyTool />
+                    </Container>
+                    <footer>
                     </footer>
                 </div>
             </body>

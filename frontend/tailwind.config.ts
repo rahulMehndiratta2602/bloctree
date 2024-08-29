@@ -1,4 +1,9 @@
 import type { Config } from 'tailwindcss';
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
     mode: 'jit', // Ensure JIT mode is enabled
@@ -51,9 +56,12 @@ const config: Config = {
                     'linear-gradient(92.88deg, #455eb5 9.16%, #5643cc 43.89%, #673fd7 64.72%);',
                 'page-gradient':
                     'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, .3), transparent);',
-                'secondary-gradient-background': 'linear-gradient(125deg, #5f9ea0, #4682b4);',
+                'secondary-gradient-background': 
+                    'linear-gradient(125deg, #5f9ea0, #4682b4);',
                 'secondary-gradient-background-vertical':
                     'linear-gradient(0deg, #5f9ea0, #4682b4);',
+                "radial-faded":
+                    "radial-gradient(circle at bottom center,var(--color),transparent 70%)",
             },
             colors: {
                 background: '#000212',
@@ -78,6 +86,21 @@ const config: Config = {
         },
     },
 
-    plugins: [],
+    plugins: [
+        addVariablesForColors,
+      ],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }: any) {
+    let allColors = flattenColorPalette(theme("colors"));
+    let newVars = Object.fromEntries(
+      Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    );
+   
+    addBase({
+      ":root": newVars,
+    });
+}
+
 export default config;
