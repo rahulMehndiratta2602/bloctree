@@ -4,12 +4,12 @@ import { Logo } from './icons/logo';
 import { Container } from './container';
 import { Button } from './button';
 import { Hamburger } from './icons/hamburger';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SignIn } from './signIn';
+
 export const Header = () => {
     const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
-
     return (
         <header className="fixed z-20 top-0 left-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
             <Container className="flex h-[var(--navigation-height)] ">
@@ -39,10 +39,10 @@ export const Header = () => {
                     </ul>
                 </nav>
                 <div className="ml-auto h-full flex items-center">
-                    <Link className="text-sm mr-6 block" href="#">
+                    <Link className="text-sm mr-6 block" href="/signin">
                         Log in
                     </Link>
-                    <Button>Connect your Wallet</Button>
+                    <Button><Link href="/signin">Connect your Wallet</Link></Button>
                     <button
                         className="ml-6 block md:hidden"
                         onClick={() => {

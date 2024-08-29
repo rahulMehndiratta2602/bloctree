@@ -32,7 +32,7 @@ export const SignInCarousel = () => {
                             position
                         )}
                     >
-                        <div className=" grid grid-cols-2 md:flex md:flex-col md:gap-y-4 md:px-6 md:items-center md:py-12">
+                        <div className="grid grid-cols-2 md:flex md:flex-col md:gap-y-4 md:px-6 md:items-center md:py-12">
                             <div className="md:flex md:flex-col md:gap-y-4 md:items-center ">
                                 <h1 className="md:text-xl md:font-bold md:text-center">
                                     {bloctreeFeatures[cardIndex].headline}
