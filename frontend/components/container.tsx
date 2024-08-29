@@ -6,5 +6,5 @@ export const Container = ({
     children: React.ReactNode;
     className?: string;
 }) => {
-    return <div className={twMerge('max-w-[120rem] mx-auto px-8', className)}>{children}</div>;
+    return <div className={twMerge('max-w-screen overflow-y-clip overflow-x-hidden relative mx-auto px-8', className)}>{children}</div>;
 };

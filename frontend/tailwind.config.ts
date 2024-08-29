@@ -10,6 +10,7 @@ const config: Config = {
     theme: {
         fontFamily: {
             sans: '"SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+            helvetica: "Helvetica Neue"
         },
 
         fontSize: {
@@ -59,6 +60,20 @@ const config: Config = {
                 white: '#fff',
                 grey: '#858699',
                 'white-a08': 'rgba(255,255,255,0.08)',
+            },
+            keyframes: {
+                moveLeftRight: {
+                  '0%, 100%': { transform: 'translateX(-2rem)' },
+                  '50%': { transform: 'translateX(2rem)' },
+                },
+                moveRightLeft: {
+                  '0%, 100%': { transform: 'translateX(2rem)' },
+                  '50%': { transform: 'translateX(-2rem)' },
+                }
+            },
+            animation: {
+                moveLeftRight: 'moveLeftRight 3s ease-in-out infinite',
+                moveRightLeft: 'moveRightLeft 3s ease-in-out infinite'
             },
         },
     },

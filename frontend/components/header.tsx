@@ -20,7 +20,7 @@ export const Header = () => {
     const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
+        <header className="fixed z-20 top-0 left-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
             <Container className="flex h-[var(--navigation-height)] ">
                 <Link className="flex items-center text-md" href="/">
                     <Logo className="w-[1.8rem] h-[1.8rem] mr-4 " />
