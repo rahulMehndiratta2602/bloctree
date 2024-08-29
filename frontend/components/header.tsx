@@ -6,15 +6,6 @@ import { Button } from './button';
 import { Hamburger } from './icons/hamburger';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from '@/components/ui/dialog';
 import { SignIn } from './signIn';
 export const Header = () => {
     const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
@@ -51,14 +42,7 @@ export const Header = () => {
                     <Link className="text-sm mr-6 block" href="#">
                         Log in
                     </Link>
-                    <Dialog>
-                        <DialogTrigger>
-                            <Button>Connect your Wallet</Button>
-                        </DialogTrigger>
-                        <DialogContent className="w-screen h-screen max-w-screen-2xl p-0">
-                            <SignIn />
-                        </DialogContent>
-                    </Dialog>
+                    <Button>Connect your Wallet</Button>
                     <button
                         className="ml-6 block md:hidden"
                         onClick={() => {
