@@ -52,7 +52,7 @@ export const Header = () => {
                     {/* <Button>
                         <Link href="/signin">Connect your Wallet</Link>
                     </Button> */}
-                    <Connect2Phantom/>
+                    {/* <Connect2Phantom/> */}
                     <Button>
                         <Link href="/signin">Connect your Wallet</Link>
                     </Button>

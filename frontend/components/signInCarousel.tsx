@@ -15,7 +15,7 @@ export const SignInCarousel = () => {
         return () => clearInterval(slider);
     }, [cardIndex, count]);
     return (
-        <div className=" ">
+        <div className="">
             {Array.from({ length: count }).map((_, index) => {
                 let position = 'nextSlide';
                 if (index === cardIndex) {
