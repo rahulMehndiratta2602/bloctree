@@ -1,12 +1,12 @@
 'use client';
 import Link from 'next/link';
-import { Logo } from './icons/logo';
 import { Container } from './container';
 import { Button } from './button';
 import { Hamburger } from './icons/hamburger';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SignIn } from './signIn';
+import Image from 'next/image';
 
 export const Header = () => {
     const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
@@ -14,7 +14,13 @@ export const Header = () => {
         <header className="fixed z-20 top-0 left-0 w-full border-b border-white-a08 backdrop-blur-[12px]">
             <Container className="flex h-[var(--navigation-height)] ">
                 <Link className="flex items-center text-md" href="/">
-                    <Logo className="w-[1.8rem] h-[1.8rem] mr-4 " />
+                    <Image
+                        src="/img/logo.png"
+                        alt="logo-image"
+                        width={23}
+                        height={23}
+                        className="mr-[0.6rem]"
+                    />
                     BlocTree
                 </Link>
                 <nav
@@ -42,7 +48,9 @@ export const Header = () => {
                     <Link className="text-sm mr-6 block" href="/signin">
                         Log in
                     </Link>
-                    <Button><Link href="/signin">Connect your Wallet</Link></Button>
+                    <Button>
+                        <Link href="/signin">Connect your Wallet</Link>
+                    </Button>
                     <button
                         className="ml-6 block md:hidden"
                         onClick={() => {
