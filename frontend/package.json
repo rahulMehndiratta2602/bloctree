@@ -13,6 +13,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@solana/web3.js": "^1.95.3",
     "axios": "^1.7.5",
+    "@tabler/icons-react": "^3.14.0",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",

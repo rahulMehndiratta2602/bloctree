@@ -1,11 +1,11 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Container } from '@/components/container';
 import { Header } from '@/components/header';
 import { MovingBorderComponent } from '@/components/movingBorder';
 import { StarsIllustration } from '@/components/stars';
-import { UnlikeAnyTool } from "@/components/unlineAnyTool";
+import { UnlikeAnyTool } from '@/components/unlineAnyTool';
 
 export const metadata: Metadata = {
     title: 'Create Next App',
