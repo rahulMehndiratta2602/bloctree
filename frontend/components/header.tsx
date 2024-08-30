@@ -6,6 +6,7 @@ import { Hamburger } from './icons/hamburger';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SignIn } from './signIn';
+import Connect2Phantom from './Connect2Phantom';
 import Image from 'next/image';
 
 export const Header = () => {
@@ -48,6 +49,10 @@ export const Header = () => {
                     <Link className="text-sm mr-6 block" href="/signin">
                         Log in
                     </Link>
+                    {/* <Button>
+                        <Link href="/signin">Connect your Wallet</Link>
+                    </Button> */}
+                    <Connect2Phantom/>
                     <Button>
                         <Link href="/signin">Connect your Wallet</Link>
                     </Button>
