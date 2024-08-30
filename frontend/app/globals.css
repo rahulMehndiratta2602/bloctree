@@ -110,6 +110,31 @@
   border-image: conic-gradient(from var(--angle), #18181b, #5643cc 0.1turn, #5f9ea0 0.15turn, #18181b 0.25turn) 30;
 	animation: borderRotate 2500ms linear infinite forwards;
 }
+
+.swiper{
+  height: 100%;
+  position: relative;
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color: white !important;
+  border: 2px solid white;
+  padding: 3rem !important;
+  border-radius: 50%;
+  scale: 0.4;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover{
+  color: rgba(0, 0, 0, 0.3) !important;
+  background-color: white;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: white !important;
+}
+
 @property --angle {
   syntax: '<angle>';
   initial-value: 90deg;

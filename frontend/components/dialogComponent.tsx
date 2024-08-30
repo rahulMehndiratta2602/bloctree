@@ -10,8 +10,16 @@ import {
 } from "@/components/ui/dialog"
 import Image from "next/image"
 import { Input } from "./ui/input"
+import Connect2Phantom from "./Connect2Phantom"
 
-export function DialogComponent({btnName, walletsImage, btnDesc, placeholder}) {
+interface dialogProps {
+  btnName: string,
+  walletsImage: string,
+  btnDesc: string,
+  placeholder: string
+}
+
+export function DialogComponent({btnName, walletsImage, btnDesc, placeholder} : dialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -30,7 +38,12 @@ export function DialogComponent({btnName, walletsImage, btnDesc, placeholder}) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>{btnName}</DialogTitle>
+          <div className="flex justify-between items-center">
+            <Image src="/img/phantomIcon.svg" width={30} height={30} alt="" />
+            <Connect2Phantom />
+          </div>
+        </DialogHeader>
+          {/* <DialogTitle>{btnName}</DialogTitle>
           <DialogDescription className="pt-5">
             {btnDesc}
           </DialogDescription>
@@ -38,7 +51,7 @@ export function DialogComponent({btnName, walletsImage, btnDesc, placeholder}) {
         <div className="grid gap-4 py-4">
             <Input className="min-w-full" placeholder="Enter ID" />
             <Input type="password" className="min-w-full" placeholder="Enter Password" />
-        </div>
+        </div> */}
       </DialogContent>
     </Dialog>
   )

@@ -7,12 +7,25 @@ import Link from 'next/link';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { DialogComponent } from './dialogComponent';
 import SwiperCarousel from './swiperCarousel';
+import { IoClose } from "react-icons/io5";
 
 export const SignIn = () => {
     return (
         <div className="w-screen h-screen flex md:flex-row flex-col-reverse overflow-hidden">
-            <main className=" w-full h-[50vh] md:h-screen md:w-[50vw]  bg-page-gradient bg-background grid grid-cols-1 xs:grid-cols-2 sm:gap-6 md:flex md:flex-col px-6 sm:px-4 md:px-10 py-[2rem] md:py-[4rem] lg:py-[8.0rem] gap-2 md:gap-10 z-20">
-                <h1 className="text-[1.8rem] sm:text-lg md:text-xl font-bold ">
+            <main className="relative w-full h-[50vh] md:h-screen md:w-[50vw]  bg-page-gradient bg-background grid grid-cols-1 xs:grid-cols-2 sm:gap-6 md:flex md:flex-col px-6 sm:px-4 md:px-10 py-[2rem] md:py-[4rem] lg:py-[8.0rem] gap-2 md:gap-10 z-20">
+                <div className="absolute top-0 left-2 ml-4 z-30">
+                    <Link className="p-5 cursor-pointer hidden md:flex items-center text-lg font-bold" href="/">
+                        <Image
+                            src="/img/logo.png"
+                            alt="logo-image"
+                            width={50}
+                            height={50}
+                            className="mr-[1rem]"
+                        />
+                        BlocTree
+                    </Link>
+                </div>
+                <h1 className="text-[1.8rem] md:mt-10 sm:text-lg md:text-xl font-bold ">
                     Select Sign In Option
                 </h1>
                 <section className="flex flex-col  md:gap-6">
@@ -62,12 +75,7 @@ export const SignIn = () => {
                     </div>
                 </section>
             </main>
-            <div className="absolute ml-10 z-30">
-                <Link href="/" className="p-5">
-                    <FaLongArrowAltLeft size="4rem" />
-                </Link>
-            </div>
-            <div className="w-full h-[50vh] md:h-screen md:w-[50vw]  bg-secondary-gradient-background-vertical md:bg-secondary-gradient-background overflow-hidden">
+            <div className="w-full h-[50vh] px-4 py-4 md:h-screen md:w-[50vw]  bg-secondary-gradient-background-vertical md:bg-secondary-gradient-background overflow-hidden">
                 {/* "1,2,3,5,7,21,28,30" */}
                 {/* <SignInCarousel /> */}
                 <SwiperCarousel />
