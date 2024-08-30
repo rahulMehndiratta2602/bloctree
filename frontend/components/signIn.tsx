@@ -6,6 +6,7 @@ import { Button } from './button';
 import Link from 'next/link';
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { DialogComponent } from './dialogComponent';
+import SwiperCarousel from './swiperCarousel';
 
 export const SignIn = () => {
 
@@ -56,7 +57,8 @@ export const SignIn = () => {
             <div className='absolute ml-10 z-30'><Link href="/" className='p-5'><FaLongArrowAltLeft size='4rem' /></Link></div>
             <div className="w-full h-[50vh] md:h-screen md:w-[50vw]  bg-secondary-gradient-background-vertical md:bg-secondary-gradient-background overflow-hidden">
                 {/* "1,2,3,5,7,21,28,30" */}
-                <SignInCarousel />
+                {/* <SignInCarousel /> */}
+                <SwiperCarousel />
             </div>
         </div>
     );
