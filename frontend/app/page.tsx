@@ -4,10 +4,9 @@ import Image from 'next/image';
 import heroImage from '@/public/img/hero.webp';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import { Header } from '@/components/header';
-import React, { FC, useEffect, useState } from "react";
-import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
+import React, { FC, useEffect, useState } from 'react';
+import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js';
 import axios from 'axios';
-
 
 export default function Home() {
     return (
