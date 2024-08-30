@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import walletsImage from '@/public/img/wallets.webp';
 import passKeyImage from '@/public/img/passkey.webp';
-import { SignInCarousel } from './signInCarousel';
+// import { SignInCarousel } from './signInCarousel';
 import { Button } from './button';
 import Link from 'next/link';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
@@ -42,12 +42,7 @@ export const SignIn = () => {
                             <DialogComponent btnName={"Connect Wallet"} />
                         </h2>
                     </div> */}
-                    <DialogComponent
-                        btnName={'Connect Wallet'}
-                        btnDesc={'Enter Solana Details'}
-                        walletsImage={walletsImage}
-                        placeholder={'Wallet Connection'}
-                    />
+                    <DialogComponent btnName={'Connect Wallet'} />
                     <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
                             src={passKeyImage}
@@ -61,11 +56,7 @@ export const SignIn = () => {
                 </section>
                 <h3 className="text-xs md:text-md text-grey">New here?</h3>
                 <section className="flex flex-col  md:gap-6">
-                    <DialogComponent
-                        btnName={'Register with a New Wallet'}
-                        btnDesc={''}
-                        walletsImage={walletsImage}
-                    />
+                    <DialogComponent btnName={'Register with a New Wallet'} />
                     <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
                             src={passKeyImage}
