@@ -1,30 +1,46 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-
-// console.log("Nothing");
-
-dotenv.config({ path: './env' });
-
-//import transactionRouter from './routes/transaction.route.js'
+import userRouter from './routes/user.route.js';
+import connectDB from './database/dbConnect.js';
 import accrouter from './routes/account.route.js';
+import getTransactions  from './controller/transactions.js';
+
+// Initialize environment variables
+dotenv.config();
+
+// Initialize express app
 const app = express();
 
+// Connect to the database
+connectDB();
+
+// CORS configuration
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
-    credentials: true
+    credentials: true,
 }));
 
-//app.use("/getTransaction" , transactionRouter)
-app.use("/account", accrouter);
+// Middleware to parse JSON requests
+app.use(express.json());
 
-app.get('/', function (req, res) {
+// Route handlers
+app.use("/account", accrouter);
+app.use("/signin", userRouter);
+app.use("/signup", userRouter);
+app.use("/avehi", userRouter);
+app.use('/get-transactions', getTransactions);
+
+app.use("/", userRouter);
+
+// Default route
+app.get('/', (req, res) => {
     res.json({
         "name": "dishant",
     });
 });
 
-
-app.listen(3000, () =>
-    console.log('Example app listening on port 3000!'),
+// Start the server
+app.listen(3001, () =>
+    console.log('Example app listening on port 3001!'),
 );
