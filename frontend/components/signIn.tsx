@@ -29,7 +29,7 @@ export const SignIn = () => {
                         btnName={'Connect Wallet'}
                         btnDesc={'Enter Solana Details'}
                         walletsImage={walletsImage}
-                        placeholder={'Wallet Connection'}
+                        placeholder={'jaj'}
                     />
                     <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
@@ -48,6 +48,7 @@ export const SignIn = () => {
                         btnName={'Register with a New Wallet'}
                         btnDesc={''}
                         walletsImage={walletsImage}
+                        placeholder={'ahhda'}
                     />
                     <div className="flex items-center gap-2 md:gap-4 px-4 py-2 rounded-lg hover:bg-primary-gradient hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] cursor-pointer">
                         <Image
