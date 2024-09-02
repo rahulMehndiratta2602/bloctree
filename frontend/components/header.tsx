@@ -52,10 +52,12 @@ export const Header = () => {
                     {/* <Button>
                         <Link href="/signin">Connect your Wallet</Link>
                     </Button> */}
-                    {/* <Connect2Phantom/> */}
                     <Button>
-                        <Link href="/signin">Connect your Wallet</Link>
+                    <Connect2Phantom/>
                     </Button>
+                    {/* <Button>
+                        <Link href="/signin">Connect your Wallet</Link>
+                    </Button> */}
                     <button
                         className="ml-6 block md:hidden"
                         onClick={() => {
