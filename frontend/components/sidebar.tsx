@@ -3,13 +3,18 @@
 import React, { useState } from 'react';
 import Link from 'next/link'; // Import the Link component from 'next/link'
 import { Sidebar, SidebarBody, SidebarLink } from './ui/sidebar';
-import { IconArrowLeft, IconBrandTabler, IconSettings, IconUserBolt, IconLogout } from '@tabler/icons-react';
+import {
+    IconArrowLeft,
+    IconBrandTabler,
+    IconSettings,
+    IconUserBolt,
+    IconLogout,
+} from '@tabler/icons-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { usePhantom } from '@/components/usePhantom'; // Custom hook for managing Phantom connection
 import { useRouter } from 'next/navigation'; // Import useRouter
 import { motion } from 'framer-motion';
-
 
 export function SidebarDemo() {
     const router = useRouter(); // Initialize the router
@@ -21,8 +26,8 @@ export function SidebarDemo() {
         router.push('/'); // Redirect to the main page
     };
 
-   const { pubKey } = usePhantom(); // Replace 'your_public_key' with the actual value of pubKey
-    
+    const { pubKey } = usePhantom(); // Replace 'your_public_key' with the actual value of pubKey
+
     const links = [
         {
             label: 'Feed',
@@ -109,7 +114,6 @@ export function SidebarDemo() {
 }
 
 // Other components like Logo and Dashboard stay the same.
-
 
 export const Logo = () => {
     return (

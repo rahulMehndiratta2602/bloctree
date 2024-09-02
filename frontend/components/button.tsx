@@ -5,7 +5,7 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
     children: React.ReactNode;
 }
 
-const buttonClasses = cva('rounded-full flex items-center', {
+const buttonClasses = cva('rounded-full flex items-center cursor-pointer', {
     variants: {
         variant: {
             primary: 'bg-primary-gradient hover:text-shadow hover:shadow-primary',
