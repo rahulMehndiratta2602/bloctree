@@ -1,7 +1,7 @@
 import { Container } from '@/components/container';
 import { Hero, HeroSubtitle, HeroTitle } from '@/components/hero';
 import Image from 'next/image';
-import heroImage from '@/public/img/hero.webp';
+import heroImage from '@/public/img/hero.png';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import { Header } from '@/components/header';
 import React, { FC, useEffect, useState } from 'react';
@@ -23,8 +23,8 @@ export default function Home() {
                             Hub in <br /> One Link.
                         </HeroTitle>
                         <HeroSubtitle>
-                            Join 50M+ users simplifying their digital presence with Linktree.
-                            Connect your
+                            Join 50M+(not really!) users simplifying their digital presence with
+                            BlocTree. Connect your
                             <span className=" text-yellow-400">
                                 {' '}
                                 Web3 Projects, NFTs, and Social Profiles
