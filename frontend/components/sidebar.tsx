@@ -1,13 +1,28 @@
 'use client';
+'use client';
 import React, { useState } from 'react';
+import Link from 'next/link'; // Import the Link component from 'next/link'
 import { Sidebar, SidebarBody, SidebarLink } from './ui/sidebar';
-import { IconArrowLeft, IconBrandTabler, IconSettings, IconUserBolt } from '@tabler/icons-react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { IconArrowLeft, IconBrandTabler, IconSettings, IconUserBolt, IconLogout } from '@tabler/icons-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { usePhantom } from '@/components/usePhantom'; // Custom hook for managing Phantom connection
+import { useRouter } from 'next/navigation'; // Import useRouter
+import { motion } from 'framer-motion';
+
 
 export function SidebarDemo() {
+    const router = useRouter(); // Initialize the router
+    const [open, setOpen] = useState(false);
+    const { connected, disconnect } = usePhantom();
+
+    const handleLogout = async () => {
+        await disconnect(); // Call the disconnect function
+        router.push('/'); // Redirect to the main page
+    };
+
+   const { pubKey } = usePhantom(); // Replace 'your_public_key' with the actual value of pubKey
+    
     const links = [
         {
             label: 'Feed',
@@ -32,18 +47,18 @@ export function SidebarDemo() {
         },
         {
             label: 'WordCell Blogs ',
-            href: '#',
+            href: `https://mirror.xyz/${pubKey}`,
             icon: (
                 <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
             ),
         },
     ];
-    const [open, setOpen] = useState(false);
+
     return (
         <div
             className={cn(
-                'rounded-md flex flex-col md:flex-row bg-background dark:bg-background  flex-1  mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden w-screen ',
-                'h-screen' // for your use case, use `h-screen` instead of `h-[60vh]`
+                'rounded-md flex flex-col md:flex-row bg-background dark:bg-background flex-1 mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden w-screen',
+                'h-screen'
             )}
         >
             <Sidebar open={open} setOpen={setOpen}>
@@ -57,12 +72,12 @@ export function SidebarDemo() {
                                 <SidebarLink
                                     key={idx}
                                     link={link}
-                                    className=" rounded-lg hover:bg-primary-gradient hover:shadow-[0_9px_15px_rgba(8,_112,_184,_0.7)]"
+                                    className="rounded-lg hover:bg-primary-gradient hover:shadow-[0_9px_15px_rgba(8,_112,_184,_0.7)]"
                                 />
                             ))}
                         </div>
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-4">
                         <SidebarLink
                             link={{
                                 label: 'cromatikap',
@@ -78,6 +93,13 @@ export function SidebarDemo() {
                                 ),
                             }}
                         />
+                        <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2 rounded-lg bg-red-600 hover:bg-red-700 text-white py-2 px-3"
+                        >
+                            <IconLogout className="h-5 w-5 flex-shrink-0" />
+                            <span>Logout</span>
+                        </button>
                     </div>
                 </SidebarBody>
             </Sidebar>
@@ -85,6 +107,10 @@ export function SidebarDemo() {
         </div>
     );
 }
+
+// Other components like Logo and Dashboard stay the same.
+
+
 export const Logo = () => {
     return (
         <Link
@@ -102,6 +128,7 @@ export const Logo = () => {
         </Link>
     );
 };
+
 export const LogoIcon = () => {
     return (
         <Link
@@ -122,7 +149,7 @@ const Dashboard = () => {
                     {[...new Array(4)].map((i) => (
                         <div
                             key={'first' + i}
-                            className="h-20 w-full rounded-lg  bg-gray-100 dark:bg-neutral-800 animate-pulse"
+                            className="h-20 w-full rounded-lg bg-gray-100 dark:bg-neutral-800 animate-pulse"
                         ></div>
                     ))}
                 </div>
@@ -130,7 +157,7 @@ const Dashboard = () => {
                     {[...new Array(2)].map((i) => (
                         <div
                             key={'second' + i}
-                            className="h-full w-full rounded-lg  bg-gray-100 dark:bg-neutral-800 animate-pulse"
+                            className="h-full w-full rounded-lg bg-gray-100 dark:bg-neutral-800 animate-pulse"
                         ></div>
                     ))}
                 </div>
